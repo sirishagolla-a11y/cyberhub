@@ -13,6 +13,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
 # Environment configuration
 .env
 .env.local
