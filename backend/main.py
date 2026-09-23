@@ -1,7 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api import api_router
 
-app = FastAPI(title="CYBERHUB Backend API", version="0.1.0")
+app = FastAPI(
+    title="CYBERHUB Backend API",
+    version="0.1.0",
+    description="AI-Powered Public Digital Identity Intelligence System API"
+)
 
 # Configure CORS for React frontend development server
 origins = [
@@ -23,3 +28,6 @@ def read_root():
         "status": "ok",
         "message": "CyberHub backend is running"
     }
+
+# Include API routes under /api
+app.include_router(api_router, prefix="/api")
